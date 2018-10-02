@@ -1,0 +1,26 @@
+# Please do not modify this part of the code!
+special_character_set = "@/%&*_-"
+
+is_valid = False
+
+# Your code goes here
+password = input("Enter your password: \n")
+
+counter1 = 0
+counter2 = 0
+counter3 = 0
+counter4 = 0
+
+for a in password:
+    if a.isupper():
+        counter1 += 1
+    if a.islower():
+        counter2 += 1
+    if a.isdigit():
+        counter3 += 1
+    if a in special_character_set:
+        counter4 += 1
+if len(password) in range(8, 31) and counter1 >= 2 and counter2 >= 2 and counter3 >= 1 and counter4 == 1:
+    is_valid = True
+
+print(is_valid)
