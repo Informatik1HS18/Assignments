@@ -1,0 +1,12 @@
+# ======== You can define the handshakes function here. Do not write any code other than your solution here! ================
+def handshakes(x):
+    if x < 3:
+        return 0
+    return x*(x+1)/2
+# ====================================================================================================================================
+
+
+if __name__ == '__main__':
+	# Here you can write code to test your function. Code you write here is solely for testing and will not be evaluated.
+
+    print(handshakes(8))
