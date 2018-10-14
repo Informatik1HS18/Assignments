@@ -1,0 +1,15 @@
+# ======== You can define the gcd function here. Do not write any code other than your solution here! ================
+
+def gcd(a, b):
+    if b == 0:
+        return a
+    return gcd(b, a%b)
+
+
+# ====================================================================================================================================
+
+
+if __name__ == '__main__':
+	# Here you can write code to test your function. Code you write here is solely for testing and will not be evaluated.
+
+    print(gcd(14, 48))
