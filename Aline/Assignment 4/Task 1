@@ -1,6 +1,6 @@
 # ======== You can define the handshakes function here. Do not write any code other than your solution here! ================
 def handshakes(x):
-    if x < 3:
+    if x < 2:
         return 0
     return x*(x-1)/2
 # ====================================================================================================================================
