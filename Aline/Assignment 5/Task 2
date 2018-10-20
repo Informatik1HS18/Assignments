@@ -1,0 +1,31 @@
+def is_valid_row(row, year=None, sex=None):
+    """
+    A helper function that returns True if a row satisfies the specified filter constraints, False otherwise.
+    The row should be of type OrderedDict, so you can use the entries of the list that you create in read_csv
+    directly, without modifying it.
+
+    Example:
+
+    row = OrderedDict([('HUNDENAME', 'Adam'), ('GEBURTSJAHR_HUND', '2006'), ('GESCHLECHT_HUND', 'm')])
+
+    is_valid_row(row) --> no filter specified, this should always return True
+    is_valid_row(row, sex='w') --> should return False (wrong sex)
+    is_valid_row(row, year=1994, sex='m') --> should return False (wrong year)
+    is_valid_row(row, year=2006, sex='m') --> should return True
+
+    :param row: An entry of the list created from the csv file, with data type OrderedDict
+    :param year: An integer parameter specifying the birth year. Any integer is accepted, or None if no filter should be applied.
+    :param sex: A string parameter specifying the sex. Possible values: 'm', 'w' or None if no filter should be applied.
+    :return: True if a row satisfies the specified filter constraints, False otherwise.
+    """
+    count = 0
+    for key, value in row.items():
+        if key == "GEBURTSJAHR_HUND":
+            if year == None or year == value:
+                count += 1
+        if key == "GESCHLECHT_HUND":
+            if sex == None or sex == value:
+                count += 1
+    if count == 2:
+        return True
+    return False
